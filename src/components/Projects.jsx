@@ -32,8 +32,8 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-6xl px-6 py-16">
       <div className="mb-8 flex items-end justify-between">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Projects</h2>
-          <p className="mt-2 text-slate-600 dark:text-slate-300">Selected work showcasing full‑stack problem solving.</p>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">Projects</h2>
+          <p className="mt-2 text-slate-700/90 dark:text-slate-300/90 leading-relaxed">Selected work showcasing full‑stack problem solving.</p>
         </div>
         <a
           href="https://github.com/"
@@ -52,13 +52,13 @@ export default function Projects() {
             className="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 backdrop-blur p-5 hover:shadow-lg transition-shadow"
           >
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{p.title}</h3>
+              <h3 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{p.title}</h3>
               <Terminal className="h-5 w-5 text-indigo-600" />
             </div>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{p.description}</p>
+            <p className="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 leading-relaxed">{p.description}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {p.tech.map((t) => (
-                <span key={t} className="text-xs rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-slate-600 dark:text-slate-300">
+                <span key={t} className="text-xs rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-slate-700/90 dark:text-slate-300/90">
                   {t}
                 </span>
               ))}
@@ -74,7 +74,7 @@ export default function Projects() {
               </a>
               <a
                 href={p.repo}
-                className="inline-flex items-center gap-2 text-slate-600 hover:underline dark:text-slate-300"
+                className="inline-flex items-center gap-2 text-slate-700/90 hover:underline dark:text-slate-300/90"
                 target="_blank"
                 rel="noreferrer"
               >

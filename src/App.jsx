@@ -5,9 +5,9 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-900 dark:from-slate-900 dark:via-slate-950 dark:to-black font-serif antialiased">
       <Header />
-      <main>
+      <main className="[&_*:where(p)]:leading-relaxed">
         <Projects />
         <About />
         <Contact />
