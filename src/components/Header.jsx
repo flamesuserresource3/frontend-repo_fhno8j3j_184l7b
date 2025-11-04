@@ -21,12 +21,12 @@ export default function Header() {
     <header className="relative overflow-hidden">
       {/* Spline full-width animated background */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/UngO8SNLfLcyPG7O/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/Z9BMpz-LA54Dlbrj/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       {/* Soft gradient overlays to blend with content; don't block interactions */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-white/40 dark:to-slate-900/60"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-white/40 dark:to-slate-900/60"
         aria-hidden
       />
       <div
