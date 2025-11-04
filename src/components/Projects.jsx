@@ -1,4 +1,5 @@
 import { Github, Globe, Terminal } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -27,29 +28,45 @@ const projects = [
   },
 ];
 
+const fadeIn = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: 'easeOut' },
+};
+
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-16">
+    <motion.section id="projects" className="mx-auto max-w-6xl px-6 py-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
       <div className="mb-8 flex items-end justify-between">
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">Projects</h2>
-          <p className="mt-2 text-slate-700/90 dark:text-slate-300/90 leading-relaxed">Selected work showcasing full‑stack problem solving.</p>
+          <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-white" {...fadeIn}>
+            Projects
+          </motion.h2>
+          <motion.p className="mt-2 text-slate-700/90 dark:text-slate-300/90 leading-relaxed" {...fadeIn} transition={{ delay: 0.1 }}>
+            Selected work showcasing full‑stack problem solving.
+          </motion.p>
         </div>
-        <a
+        <motion.a
           href="https://github.com/"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-indigo-600 hover:underline"
+          whileHover={{ x: 2 }}
         >
           <Github className="h-4 w-4" /> View GitHub
-        </a>
+        </motion.a>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        {projects.map((p) => (
-          <article
+        {projects.map((p, idx) => (
+          <motion.article
             key={p.title}
             className="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 backdrop-blur p-5 hover:shadow-lg transition-shadow"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.08 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -4 }}
           >
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{p.title}</h3>
@@ -81,9 +98,9 @@ export default function Projects() {
                 <Github className="h-4 w-4" /> Source
               </a>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
